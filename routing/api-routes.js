@@ -14,7 +14,7 @@ module.exports = function(app) {
         }
     });
 
-    app.put('/eat', function(request, response) {
+    app.put('/devour', function(request, response) {
         model.update(
 
             {
@@ -30,4 +30,21 @@ module.exports = function(app) {
             response.redirect('/');
         })
     });
-};
+    //used sequelize .update
+app.put('/another', function(req,res){
+        model.update(
+            //set value to be update
+            {
+                devoured : 0
+            },
+            // where clause/criteria
+            {   where : {
+                    id: req.body.burgerid
+                    }
+            }
+                ).then(function(){
+                    res.redirect('/');
+                })
+            });
+
+      }

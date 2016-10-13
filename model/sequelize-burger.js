@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-
+var model = require('../config/connection.js');
 
 var sequelizeBurger = model.define('sequelizeBurger', {
     id: {
