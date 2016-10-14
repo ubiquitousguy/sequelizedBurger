@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `burgers_db`;
-USE `burgers_db`;
+CREATE DATABASE IF NOT EXISTS `sequelizeBurgers_db`;
+USE `sequelizeBurgers_db`;
 
 CREATE TABLE `burgers` (
 	`id` Int( 11 ) AUTO_INCREMENT NOT NULL,
