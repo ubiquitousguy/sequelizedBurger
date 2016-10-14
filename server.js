@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var exphbs = require('express-handlebars');
 var methodOverride = require('method-override');
+var models = require('models');
 
 // ==============================================================================
 // EXPRESS CONFIGURATION
@@ -48,4 +49,7 @@ require('./routing/html-routes.js')(app);
 
 app.listen(PORT, function() {
 	console.log("App listening on PORT: " + PORT);
+});
+models.sequelize.sync().then(function(){
+	var server = app.listen(app.get('port'));
 });
